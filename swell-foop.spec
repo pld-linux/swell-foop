@@ -1,17 +1,17 @@
 Summary:	Swell Foop
 Summary(pl.UTF-8):	Gra Swell Foop dla GNOME
 Name:		swell-foop
-Version:	3.12.0
+Version:	3.12.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/swell-foop/3.12/%{name}-%{version}.tar.xz
-# Source0-md5:	b7f6c712d0439d6b6085abb6c11d4e62
+# Source0-md5:	18e9d10a32cc9dc572c17b7c6f65fd0f
 URL:		https://live.gnome.org/Swell%20Foop
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
-BuildRequires:	clutter-devel >= 1.0.0
-BuildRequires:	clutter-gtk-devel >= 0.91.6
+BuildRequires:	clutter-devel >= 1.14.0
+BuildRequires:	clutter-gtk-devel >= 1.4.0
 BuildRequires:	glib2-devel >= 1:2.36.0
 BuildRequires:	gtk+3-devel >= 3.10.0
 BuildRequires:	intltool >= 0.50.0
@@ -20,8 +20,8 @@ BuildRequires:	vala >= 2:0.22.0
 BuildRequires:	yelp-tools
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	glib2 >= 1:2.26.0
-Requires:	clutter >= 1.0.0
-Requires:	clutter-gtk >= 0.91.6
+Requires:	clutter >= 1.14.0
+Requires:	clutter-gtk >= 1.4.0
 Requires:	gtk+3 >= 3.10.0
 Requires:	hicolor-icon-theme
 Provides:	gnome-games-same-gnome
