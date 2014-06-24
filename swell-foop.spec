@@ -1,9 +1,9 @@
-Summary:	Swell Foop
+Summary:	Swell Foop game for GNOME
 Summary(pl.UTF-8):	Gra Swell Foop dla GNOME
 Name:		swell-foop
 Version:	3.12.2
 Release:	1
-License:	GPL v2
+License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/swell-foop/3.12/%{name}-%{version}.tar.xz
 # Source0-md5:	03c227f399f0162261f5e0f9d735e420
@@ -22,6 +22,7 @@ Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	glib2 >= 1:2.26.0
 Requires:	clutter >= 1.14.0
 Requires:	clutter-gtk >= 1.4.0
+Requires:	glib2-devel >= 1:2.36.0
 Requires:	gtk+3 >= 3.10.0
 Requires:	hicolor-icon-theme
 Provides:	gnome-games-same-gnome
@@ -78,5 +79,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/glib-2.0/schemas/org.gnome.swell-foop.gschema.xml
 %{_datadir}/swell-foop
 %{_desktopdir}/swell-foop.desktop
-%{_iconsdir}/HighContrast/*/*/*.png
-%{_iconsdir}/hicolor/*/*/*.png
+%{_iconsdir}/HighContrast/*/apps/swell-foop.png
+%{_iconsdir}/hicolor/*/apps/swell-foop.png
