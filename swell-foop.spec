@@ -1,19 +1,19 @@
 Summary:	Swell Foop game for GNOME
 Summary(pl.UTF-8):	Gra Swell Foop dla GNOME
 Name:		swell-foop
-Version:	3.12.2
+Version:	3.16.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/swell-foop/3.12/%{name}-%{version}.tar.xz
-# Source0-md5:	03c227f399f0162261f5e0f9d735e420
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/swell-foop/3.16/%{name}-%{version}.tar.xz
+# Source0-md5:	31c50fec1c1851a6afe9acc2573716c9
 URL:		https://live.gnome.org/Swell%20Foop
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	clutter-devel >= 1.14.0
-BuildRequires:	clutter-gtk-devel >= 1.4.0
+BuildRequires:	clutter-gtk-devel >= 1.5.0
 BuildRequires:	glib2-devel >= 1:2.36.0
-BuildRequires:	gtk+3-devel >= 3.10.0
+BuildRequires:	gtk+3-devel >= 3.12.0
 BuildRequires:	intltool >= 0.50.0
 BuildRequires:	pkgconfig
 BuildRequires:	vala >= 2:0.22.0
@@ -21,9 +21,9 @@ BuildRequires:	yelp-tools
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	glib2 >= 1:2.26.0
 Requires:	clutter >= 1.14.0
-Requires:	clutter-gtk >= 1.4.0
+Requires:	clutter-gtk >= 1.5.0
 Requires:	glib2-devel >= 1:2.36.0
-Requires:	gtk+3 >= 3.10.0
+Requires:	gtk+3 >= 3.12.0
 Requires:	hicolor-icon-theme
 Provides:	gnome-games-same-gnome
 Provides:	gnome-games-swell-foop = 1:%{version}-%{release}
@@ -63,12 +63,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 %glib_compile_schemas
-%update_icon_cache HighContrast
 %update_icon_cache hicolor
 
 %postun
 %glib_compile_schemas
-%update_icon_cache HighContrast
 %update_icon_cache hicolor
 
 %files -f %{name}.lang
@@ -79,5 +77,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/glib-2.0/schemas/org.gnome.swell-foop.gschema.xml
 %{_datadir}/swell-foop
 %{_desktopdir}/swell-foop.desktop
-%{_iconsdir}/HighContrast/*/apps/swell-foop.png
 %{_iconsdir}/hicolor/*/apps/swell-foop.png
+%{_iconsdir}/hicolor/*/apps/*.svg
