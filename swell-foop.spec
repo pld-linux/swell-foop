@@ -78,5 +78,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/glib-2.0/schemas/org.gnome.swell-foop.gschema.xml
 %{_datadir}/swell-foop
 %{_desktopdir}/swell-foop.desktop
-%{_iconsdir}/hicolor/*/apps/swell-foop.png
-%{_iconsdir}/hicolor/*/apps/*.svg
+%{_iconsdir}/hicolor/*x*/apps/swell-foop.png
+%{_iconsdir}/hicolor/symbolic/apps/swell-foop-symbolic.svg
