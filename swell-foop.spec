@@ -8,6 +8,7 @@ Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/swell-foop/3.16/%{name}-%{version}.tar.xz
 # Source0-md5:	31c50fec1c1851a6afe9acc2573716c9
 URL:		https://live.gnome.org/Swell%20Foop
+BuildRequires:	appstream-glib-devel
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	clutter-devel >= 1.14.0
@@ -19,7 +20,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	vala >= 2:0.22.0
 BuildRequires:	yelp-tools
 Requires(post,postun):	gtk-update-icon-cache
-Requires(post,postun):	glib2 >= 1:2.26.0
+Requires(post,postun):	glib2 >= 1:2.36.0
 Requires:	clutter >= 1.14.0
 Requires:	clutter-gtk >= 1.5.0
 Requires:	glib2-devel >= 1:2.36.0
