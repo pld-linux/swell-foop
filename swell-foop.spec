@@ -1,12 +1,12 @@
 Summary:	Swell Foop game for GNOME
 Summary(pl.UTF-8):	Gra Swell Foop dla GNOME
 Name:		swell-foop
-Version:	3.18.0
+Version:	3.18.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/swell-foop/3.18/%{name}-%{version}.tar.xz
-# Source0-md5:	5755abff797523b4e7c7ee395dbb92f2
+# Source0-md5:	17ecb7b09972311f78b027c40d64e203
 URL:		https://live.gnome.org/Swell%20Foop
 BuildRequires:	appstream-glib-devel
 BuildRequires:	autoconf >= 2.63
