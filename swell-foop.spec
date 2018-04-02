@@ -1,21 +1,21 @@
 Summary:	Swell Foop game for GNOME
 Summary(pl.UTF-8):	Gra Swell Foop dla GNOME
 Name:		swell-foop
-Version:	3.24.0
+Version:	3.28.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/swell-foop/3.24/%{name}-%{version}.tar.xz
-# Source0-md5:	f392638261098824518a71e79acaef49
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/swell-foop/3.28/%{name}-%{version}.tar.xz
+# Source0-md5:	756dca52e71f27f028d21607c3e47021
 URL:		https://live.gnome.org/Swell%20Foop
 BuildRequires:	appstream-glib-devel
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	clutter-devel >= 1.14.0
 BuildRequires:	clutter-gtk-devel >= 1.5.0
+BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	glib2-devel >= 1:2.36.0
 BuildRequires:	gtk+3-devel >= 3.12.0
-BuildRequires:	intltool >= 0.50.0
 BuildRequires:	pkgconfig
 BuildRequires:	vala >= 2:0.22.0
 BuildRequires:	yelp-tools
@@ -42,7 +42,6 @@ Gra, której celem jest oczyszczanie planszy poprzez usuwanie grup kul.
 %setup -q
 
 %build
-%{__intltoolize}
 %{__aclocal}
 %{__autoconf}
 %{__automake}
@@ -74,7 +73,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc NEWS
 %attr(755,root,root) %{_bindir}/swell-foop
-%{_datadir}/appdata/swell-foop.appdata.xml
+%{_datadir}/metainfo/swell-foop.appdata.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.swell-foop.gschema.xml
 %{_datadir}/swell-foop
 %{_desktopdir}/swell-foop.desktop
