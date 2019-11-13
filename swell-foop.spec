@@ -1,23 +1,26 @@
 Summary:	Swell Foop game for GNOME
 Summary(pl.UTF-8):	Gra Swell Foop dla GNOME
 Name:		swell-foop
-Version:	3.28.0
+Version:	3.34.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/swell-foop/3.28/%{name}-%{version}.tar.xz
-# Source0-md5:	756dca52e71f27f028d21607c3e47021
-URL:		https://live.gnome.org/Swell%20Foop
-BuildRequires:	appstream-glib-devel
-BuildRequires:	autoconf >= 2.63
-BuildRequires:	automake >= 1:1.11
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/swell-foop/3.34/%{name}-%{version}.tar.xz
+# Source0-md5:	aa936a5d0d3d4158605c295354efdbcd
+URL:		https://wiki.gnome.org/Apps/Swell%20Foop
+BuildRequires:	appstream-glib
 BuildRequires:	clutter-devel >= 1.14.0
 BuildRequires:	clutter-gtk-devel >= 1.5.0
 BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	glib2-devel >= 1:2.36.0
 BuildRequires:	gtk+3-devel >= 3.12.0
+BuildRequires:	meson >= 0.42
+BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.22.0
+BuildRequires:	xz
 BuildRequires:	yelp-tools
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	glib2 >= 1:2.36.0
@@ -42,19 +45,14 @@ Gra, której celem jest oczyszczanie planszy poprzez usuwanie grup kul.
 %setup -q
 
 %build
-%{__aclocal}
-%{__autoconf}
-%{__automake}
-%configure \
-	--disable-silent-rules
+%meson build
 
-%{__make}
+%ninja_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+%ninja_install -C build
 
 %find_lang %{name} --with-gnome
 
@@ -73,9 +71,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc NEWS
 %attr(755,root,root) %{_bindir}/swell-foop
-%{_datadir}/metainfo/swell-foop.appdata.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.swell-foop.gschema.xml
+%{_datadir}/metainfo/org.gnome.SwellFoop.appdata.xml
 %{_datadir}/swell-foop
-%{_desktopdir}/swell-foop.desktop
-%{_iconsdir}/hicolor/*x*/apps/swell-foop.png
-%{_iconsdir}/hicolor/symbolic/apps/swell-foop-symbolic.svg
+%{_desktopdir}/org.gnome.SwellFoop.desktop
+%{_iconsdir}/hicolor/*x*/apps/org.gnome.SwellFoop.png
+%{_iconsdir}/hicolor/symbolic/apps/org.gnome.SwellFoop-symbolic.svg
