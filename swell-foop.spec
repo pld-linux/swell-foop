@@ -1,20 +1,22 @@
 Summary:	Swell Foop game for GNOME
 Summary(pl.UTF-8):	Gra Swell Foop dla GNOME
 Name:		swell-foop
-Version:	3.34.1
+Version:	40.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/swell-foop/3.34/%{name}-%{version}.tar.xz
-# Source0-md5:	aa936a5d0d3d4158605c295354efdbcd
+Source0:	https://download.gnome.org/sources/swell-foop/40/%{name}-%{version}.tar.xz
+# Source0-md5:	59aa8f2428e0b21a70e45ca463e60776
 URL:		https://wiki.gnome.org/Apps/Swell%20Foop
 BuildRequires:	appstream-glib
 BuildRequires:	clutter-devel >= 1.14.0
 BuildRequires:	clutter-gtk-devel >= 1.5.0
 BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	glib2-devel >= 1:2.36.0
-BuildRequires:	gtk+3-devel >= 3.12.0
-BuildRequires:	meson >= 0.42
+BuildRequires:	gtk+3-devel >= 3.24
+BuildRequires:	libgee-devel >= 0.14.0
+BuildRequires:	libgnome-games-support-devel >= 1.7.1
+BuildRequires:	meson >= 0.50
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.736
@@ -27,11 +29,13 @@ Requires(post,postun):	glib2 >= 1:2.36.0
 Requires:	clutter >= 1.14.0
 Requires:	clutter-gtk >= 1.5.0
 Requires:	glib2-devel >= 1:2.36.0
-Requires:	gtk+3 >= 3.12.0
+Requires:	gtk+3 >= 3.24
 Requires:	hicolor-icon-theme
+Requires:	libgee >= 0.14.0
+Requires:	libgnome-games-support >= 1.7.1
 Provides:	gnome-games-same-gnome
 Provides:	gnome-games-swell-foop = 1:%{version}-%{release}
-Obsoletes:	gnome-games-same-gnome
+Obsoletes:	gnome-games-same-gnome < 1:2.30
 Obsoletes:	gnome-games-swell-foop < 1:3.8.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -71,7 +75,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc NEWS
 %attr(755,root,root) %{_bindir}/swell-foop
-%{_datadir}/glib-2.0/schemas/org.gnome.swell-foop.gschema.xml
+%{_datadir}/dbus-1/services/org.gnome.SwellFoop.service
+%{_datadir}/glib-2.0/schemas/org.gnome.SwellFoop.gschema.xml
 %{_datadir}/metainfo/org.gnome.SwellFoop.appdata.xml
 %{_datadir}/swell-foop
 %{_desktopdir}/org.gnome.SwellFoop.desktop
