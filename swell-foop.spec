@@ -1,12 +1,12 @@
 Summary:	Swell Foop game for GNOME
 Summary(pl.UTF-8):	Gra Swell Foop dla GNOME
 Name:		swell-foop
-Version:	40.1
+Version:	41.0.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	https://download.gnome.org/sources/swell-foop/40/%{name}-%{version}.tar.xz
-# Source0-md5:	80ab12af29143c8993433ef6b83f5e22
+Source0:	https://download.gnome.org/sources/swell-foop/41/%{name}-%{version}.tar.xz
+# Source0-md5:	960f9bc4bfe2f5031ad8229b5ccabab8
 URL:		https://wiki.gnome.org/Apps/Swell%20Foop
 BuildRequires:	appstream-glib
 BuildRequires:	clutter-devel >= 1.14.0
