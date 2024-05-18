@@ -1,39 +1,39 @@
+# TODO: use gtk4-update-icon-cache
 Summary:	Swell Foop game for GNOME
 Summary(pl.UTF-8):	Gra Swell Foop dla GNOME
 Name:		swell-foop
-Version:	41.1
+Version:	46.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	https://download.gnome.org/sources/swell-foop/41/%{name}-%{version}.tar.xz
-# Source0-md5:	deba763a8f5b04c162beffae5099fb1d
+Source0:	https://download.gnome.org/sources/swell-foop/46/%{name}-%{version}.tar.xz
+# Source0-md5:	cf32b23be4bd4d4732d581eee56274b4
 URL:		https://wiki.gnome.org/Apps/Swell%20Foop
 BuildRequires:	appstream-glib
-BuildRequires:	clutter-devel >= 1.14.0
-BuildRequires:	clutter-gtk-devel >= 1.5.0
 BuildRequires:	gettext-tools >= 0.19.8
-BuildRequires:	glib2-devel >= 1:2.36.0
-BuildRequires:	gtk+3-devel >= 3.24
+BuildRequires:	glib2-devel >= 1:2.74
+BuildRequires:	gtk4-devel >= 4.10
 BuildRequires:	libgee-devel >= 0.14.0
-BuildRequires:	libgnome-games-support-devel >= 1.7.1
-BuildRequires:	meson >= 0.50
+BuildRequires:	libgnome-games-support2-devel >= 2.0.0
+BuildRequires:	librsvg-devel >= 2.46
+BuildRequires:	meson >= 0.60
 BuildRequires:	ninja >= 1.5
+BuildRequires:	pango-devel >= 1:1.8
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.22.0
-BuildRequires:	vala-libgnome-games-support >= 1.7.1
+BuildRequires:	vala-libgnome-games-support2 >= 2.0.0
 BuildRequires:	xz
 BuildRequires:	yelp-tools
 Requires(post,postun):	gtk-update-icon-cache
-Requires(post,postun):	glib2 >= 1:2.36.0
-Requires:	clutter >= 1.14.0
-Requires:	clutter-gtk >= 1.5.0
-Requires:	glib2-devel >= 1:2.36.0
-Requires:	gtk+3 >= 3.24
+Requires(post,postun):	glib2 >= 1:2.74
+Requires:	glib2-devel >= 1:2.74
+Requires:	gtk4 >= 4.10
 Requires:	hicolor-icon-theme
 Requires:	libgee >= 0.14.0
-Requires:	libgnome-games-support >= 1.7.1
+Requires:	libgnome-games-support2 >= 2.0.0
+Requires:	librsvg >= 2.46
 Provides:	gnome-games-same-gnome
 Provides:	gnome-games-swell-foop = 1:%{version}-%{release}
 Obsoletes:	gnome-games-same-gnome < 1:2.30
@@ -79,7 +79,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/dbus-1/services/org.gnome.SwellFoop.service
 %{_datadir}/glib-2.0/schemas/org.gnome.SwellFoop.gschema.xml
 %{_datadir}/metainfo/org.gnome.SwellFoop.appdata.xml
-%{_datadir}/swell-foop
 %{_desktopdir}/org.gnome.SwellFoop.desktop
 %{_iconsdir}/hicolor/*x*/apps/org.gnome.SwellFoop.png
 %{_iconsdir}/hicolor/symbolic/apps/org.gnome.SwellFoop-symbolic.svg
