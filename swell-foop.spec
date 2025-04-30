@@ -2,17 +2,18 @@
 Summary:	Swell Foop game for GNOME
 Summary(pl.UTF-8):	Gra Swell Foop dla GNOME
 Name:		swell-foop
-Version:	46.0
+Version:	48.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	https://download.gnome.org/sources/swell-foop/46/%{name}-%{version}.tar.xz
-# Source0-md5:	cf32b23be4bd4d4732d581eee56274b4
+Source0:	https://download.gnome.org/sources/swell-foop/48/%{name}-%{version}.tar.xz
+# Source0-md5:	440fb4a10fac697a719f94eb321a22df
 URL:		https://wiki.gnome.org/Apps/Swell%20Foop
-BuildRequires:	appstream-glib
+BuildRequires:	AppStream
 BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	glib2-devel >= 1:2.74
 BuildRequires:	gtk4-devel >= 4.10
+BuildRequires:	libadwaita-devel >= 1.5
 BuildRequires:	libgee-devel >= 0.14.0
 BuildRequires:	libgnome-games-support2-devel >= 2.0.0
 BuildRequires:	librsvg-devel >= 2.46
@@ -20,7 +21,7 @@ BuildRequires:	meson >= 0.60
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pango-devel >= 1:1.8
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.22.0
 BuildRequires:	vala-libgnome-games-support2 >= 2.0.0
@@ -31,6 +32,7 @@ Requires(post,postun):	glib2 >= 1:2.74
 Requires:	glib2-devel >= 1:2.74
 Requires:	gtk4 >= 4.10
 Requires:	hicolor-icon-theme
+Requires:	libadwaita >= 1.5
 Requires:	libgee >= 0.14.0
 Requires:	libgnome-games-support2 >= 2.0.0
 Requires:	librsvg >= 2.46
@@ -50,14 +52,14 @@ Gra, której celem jest oczyszczanie planszy poprzez usuwanie grup kul.
 %setup -q
 
 %build
-%meson build
+%meson
 
-%ninja_build -C build
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%ninja_install -C build
+%meson_install
 
 %find_lang %{name} --with-gnome
 
@@ -78,7 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/swell-foop
 %{_datadir}/dbus-1/services/org.gnome.SwellFoop.service
 %{_datadir}/glib-2.0/schemas/org.gnome.SwellFoop.gschema.xml
-%{_datadir}/metainfo/org.gnome.SwellFoop.appdata.xml
+%{_datadir}/metainfo/org.gnome.SwellFoop.metainfo.xml
 %{_desktopdir}/org.gnome.SwellFoop.desktop
 %{_iconsdir}/hicolor/*x*/apps/org.gnome.SwellFoop.png
 %{_iconsdir}/hicolor/symbolic/apps/org.gnome.SwellFoop-symbolic.svg
