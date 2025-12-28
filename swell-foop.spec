@@ -3,7 +3,7 @@ Summary:	Swell Foop game for GNOME
 Summary(pl.UTF-8):	Gra Swell Foop dla GNOME
 Name:		swell-foop
 Version:	48.1
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	https://download.gnome.org/sources/swell-foop/48/%{name}-%{version}.tar.xz
@@ -24,12 +24,15 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.22.0
+BuildRequires:	vala-libadwaita
+BuildRequires:	vala-libgee
 BuildRequires:	vala-libgnome-games-support2 >= 2.0.0
+BuildRequires:	vala-librsvg
 BuildRequires:	xz
 BuildRequires:	yelp-tools
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	glib2 >= 1:2.74
-Requires:	glib2-devel >= 1:2.74
+Requires:	glib2 >= 1:2.74
 Requires:	gtk4 >= 4.10
 Requires:	hicolor-icon-theme
 Requires:	libadwaita >= 1.5
