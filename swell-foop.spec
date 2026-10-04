@@ -2,42 +2,39 @@
 Summary:	Swell Foop game for GNOME
 Summary(pl.UTF-8):	Gra Swell Foop dla GNOME
 Name:		swell-foop
-Version:	48.1
-Release:	2
+Version:	50.0
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	https://download.gnome.org/sources/swell-foop/48/%{name}-%{version}.tar.xz
-# Source0-md5:	440fb4a10fac697a719f94eb321a22df
+Source0:	https://download.gnome.org/sources/swell-foop/50/%{name}-%{version}.tar.xz
+# Source0-md5:	ecea9c3b9d11903bf2b3f1a367df00bc
 URL:		https://wiki.gnome.org/Apps/Swell%20Foop
 BuildRequires:	AppStream
 BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	glib2-devel >= 1:2.74
-BuildRequires:	gtk4-devel >= 4.10
-BuildRequires:	libadwaita-devel >= 1.5
+BuildRequires:	gtk4-devel >= 4.15.3
+BuildRequires:	libadwaita-devel >= 1.8
 BuildRequires:	libgee-devel >= 0.14.0
-BuildRequires:	libgnome-games-support2-devel >= 2.0.0
 BuildRequires:	librsvg-devel >= 2.46
-BuildRequires:	meson >= 0.60
+BuildRequires:	meson >= 1.1
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pango-devel >= 1:1.8
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.22.0
-BuildRequires:	vala-libadwaita
+BuildRequires:	vala-libadwaita >= 1.8
 BuildRequires:	vala-libgee
-BuildRequires:	vala-libgnome-games-support2 >= 2.0.0
 BuildRequires:	vala-librsvg
 BuildRequires:	xz
 BuildRequires:	yelp-tools
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	glib2 >= 1:2.74
 Requires:	glib2 >= 1:2.74
-Requires:	gtk4 >= 4.10
+Requires:	gtk4 >= 4.15.3
 Requires:	hicolor-icon-theme
-Requires:	libadwaita >= 1.5
+Requires:	libadwaita >= 1.8
 Requires:	libgee >= 0.14.0
-Requires:	libgnome-games-support2 >= 2.0.0
 Requires:	librsvg >= 2.46
 Provides:	gnome-games-same-gnome
 Provides:	gnome-games-swell-foop = 1:%{version}-%{release}
@@ -64,7 +61,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %meson_install
 
-%find_lang %{name} --with-gnome
+# swell-foop and swell-foop_libgnome-games-support po domains, swell-foop gnome help
+%find_lang %{name} --with-gnome --all-name
 
 %clean
 rm -rf $RPM_BUILD_ROOT
